@@ -1,7 +1,6 @@
 #ifndef WPIS_H
 #define WPIS_H
 #include "qdatetime.h"
-#include <iostream>
 #include <ctime>
 using namespace std;
 
@@ -9,10 +8,13 @@ class Wpis
 {
 public:
     QString tresc;
-    QDate data;
+    QDateTime data;
     void setTresc(QString t);
-    void setData(QDate d);
+    void setData(QDateTime d);
     Wpis();
+    friend bool operator==(const Wpis& lw, const Wpis& pw){
+        return (lw.data.date() == pw.data.date()&&lw.data.time()==pw.data.time());
+    }
 };
 
 #endif // WPIS_H
