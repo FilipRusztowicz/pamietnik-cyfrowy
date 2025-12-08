@@ -28,5 +28,6 @@ private:
     QString tresc;
     QDate data;
     vector<Wpis> wpisy;
+    vector<QObject*> kontenery;
 };
 #endif // MAINWINDOW_H

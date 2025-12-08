@@ -15,6 +15,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
@@ -25,10 +26,12 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QTextEdit *textEdit;
     QDateTimeEdit *dateTimeEdit;
     QPushButton *pushButton;
     QTextEdit *kontener;
+    QTextEdit *kontener2;
+    QTextEdit *textEdit;
+    QSpinBox *spinBox;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -39,19 +42,25 @@ public:
         MainWindow->resize(1276, 600);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        textEdit = new QTextEdit(centralwidget);
-        textEdit->setObjectName("textEdit");
-        textEdit->setGeometry(QRect(10, 320, 411, 231));
         dateTimeEdit = new QDateTimeEdit(centralwidget);
         dateTimeEdit->setObjectName("dateTimeEdit");
-        dateTimeEdit->setGeometry(QRect(450, 420, 271, 31));
+        dateTimeEdit->setGeometry(QRect(420, 290, 271, 31));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(450, 520, 75, 24));
+        pushButton->setGeometry(QRect(520, 360, 75, 24));
         kontener = new QTextEdit(centralwidget);
         kontener->setObjectName("kontener");
-        kontener->setGeometry(QRect(10, 0, 1081, 311));
+        kontener->setGeometry(QRect(390, 10, 371, 71));
         kontener->setMaximumSize(QSize(1081, 16777215));
+        kontener2 = new QTextEdit(centralwidget);
+        kontener2->setObjectName("kontener2");
+        kontener2->setGeometry(QRect(390, 90, 371, 70));
+        textEdit = new QTextEdit(centralwidget);
+        textEdit->setObjectName("textEdit");
+        textEdit->setGeometry(QRect(390, 170, 371, 71));
+        spinBox = new QSpinBox(centralwidget);
+        spinBox->setObjectName("spinBox");
+        spinBox->setGeometry(QRect(810, 110, 42, 25));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");

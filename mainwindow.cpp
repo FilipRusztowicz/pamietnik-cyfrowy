@@ -7,6 +7,10 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->kontener->setReadOnly(true);
+    kontenery.push_back(ui->kontener);
+    kontenery.push_back(ui->textEdit);
+
+
     //ui->dateTimeEdit->setMinimumDateTime(QDateTime::currentDateTime());
 }
 
@@ -18,6 +22,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
+
     Wpis nowyWpis;
     nowyWpis.setData(ui->dateTimeEdit->dateTime());
     nowyWpis.setTresc(ui->textEdit->toPlainText());
