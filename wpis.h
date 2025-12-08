@@ -13,8 +13,12 @@ public:
     void setData(QDateTime d);
     Wpis();
     friend bool operator==(const Wpis& lw, const Wpis& pw){
-        return (lw.data.date() == pw.data.date()&&lw.data.time()==pw.data.time());
+        qDebug()<<"wywolano operator == "<<lw.data <<" "<<pw.data;
+        return (lw.data == pw.data );
+
     }
+
+    bool operator<(const Wpis&w);
 };
 
 #endif // WPIS_H

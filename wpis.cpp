@@ -11,4 +11,7 @@ Wpis::Wpis()
 {
 
 }
+bool Wpis::operator<(const Wpis&w){
+    return this->data<w.data;
+}
 

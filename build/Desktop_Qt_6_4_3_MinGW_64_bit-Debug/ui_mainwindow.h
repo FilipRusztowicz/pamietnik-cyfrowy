@@ -36,25 +36,26 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(800, 600);
+        MainWindow->resize(1276, 600);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         textEdit = new QTextEdit(centralwidget);
         textEdit->setObjectName("textEdit");
-        textEdit->setGeometry(QRect(0, 200, 241, 71));
+        textEdit->setGeometry(QRect(10, 320, 411, 231));
         dateTimeEdit = new QDateTimeEdit(centralwidget);
         dateTimeEdit->setObjectName("dateTimeEdit");
-        dateTimeEdit->setGeometry(QRect(250, 200, 194, 22));
+        dateTimeEdit->setGeometry(QRect(450, 420, 271, 31));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(310, 230, 75, 24));
+        pushButton->setGeometry(QRect(450, 520, 75, 24));
         kontener = new QTextEdit(centralwidget);
         kontener->setObjectName("kontener");
-        kontener->setGeometry(QRect(10, 0, 311, 141));
+        kontener->setGeometry(QRect(10, 0, 1081, 311));
+        kontener->setMaximumSize(QSize(1081, 16777215));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 22));
+        menubar->setGeometry(QRect(0, 0, 1276, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");

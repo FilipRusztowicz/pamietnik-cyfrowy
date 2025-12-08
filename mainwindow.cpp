@@ -6,9 +6,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    tresc = "text";
-    ui->kontener->setText(tresc);
     ui->kontener->setReadOnly(true);
+    //ui->dateTimeEdit->setMinimumDateTime(QDateTime::currentDateTime());
 }
 
 MainWindow::~MainWindow()
@@ -22,20 +21,24 @@ void MainWindow::on_pushButton_clicked()
     Wpis nowyWpis;
     nowyWpis.setData(ui->dateTimeEdit->dateTime());
     nowyWpis.setTresc(ui->textEdit->toPlainText());
-   // qDebug()<<nowyWpis.data<<" "<<nowyWpis.tresc;
+
     wpisy.push_back(nowyWpis);
 
     for(size_t i = 0; i<wpisy.size();i++){
-        if(nowyWpis==wpisy[i]){
-            wpisy[i]=nowyWpis;
-            wpisy.pop_back();
-        }else{
-            wpisy.push_back(nowyWpis);
-        }
+    if(nowyWpis==wpisy[i]&&wpisy.size()>1){
+        wpisy[i]=nowyWpis;
+        wpisy.pop_back();
+    }
+    break;
+    }
+    std::sort(wpisy.begin(),wpisy.end());
+    for(size_t i = 0; i<wpisy.size();i++){
+
         tresc+="<h2>"+(wpisy[i].data).toString()+"</h2>"+wpisy[i].tresc;
+        tresc+="<br>-----------------</br>";
         ui->kontener->setText(tresc);
     }
-
+    tresc="";
 
 
 }
